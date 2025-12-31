@@ -1,0 +1,34 @@
+<mvc:View controllerName="studentDetailsui.studentDetailsui.controller.MyTaskUI" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+    <App id="app1">
+        <pages>
+            <Page showHeader="false" showFooter="false">
+                <content>
+                    <f:SimpleForm
+                        editable="true"
+                        layout="ResponsiveGridLayout"
+                        title="Student Information"
+                        columnsL="1"
+                        columnsM="1">
+                        <f:content>
+                            <Label text="ID" />
+                            <Input id="idInput" placeholder="Enter Student ID" />
+
+                            <Label text="Name" />
+                            <Input id="nameInput" placeholder="Enter Full Name" />
+
+                            <Label text="Branch" />
+                            <Input id="branchInput" placeholder="Enter Branch" />
+
+                            <Label text="" />
+                            <Button 
+                                text="Submit" 
+                                type="Emphasized" 
+                                press="onSubmitStudent" 
+                                width="100px" />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

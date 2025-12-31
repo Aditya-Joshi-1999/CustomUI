@@ -24,10 +24,6 @@
                     "localUri": "localService/metadata.xml",
                     "odataVersion": "2.0"
                 }
-            },
-            "bpaService": {
-                "uri": "/destinations/BPA_API/workflow/rest/v1/workflow-instances",
-                "type": "REST"
             }
         }
     },
@@ -150,17 +146,17 @@
             "properties": {
                 "studentName": {
                     "type": "string",
-                    "title": "studentName",
+                    "title": "student Name",
                     "description": "Name of the Student"
                 },
                 "studentId": {
                     "type": "string",
-                    "title": "studentId",
+                    "title": "student Id",
                     "description": "ID of the Student"
                 },
                 "branch":{
                     "type":"string",
-                    "title": "studentBranch",
+                    "title": "student Branch",
                     "description": "Branch of the Student"
                 }
             }
@@ -177,17 +173,17 @@
             "properties": {
                 "studentName": {
                     "type": "string",
-                    "title": "studentName",
+                    "title": "student Name",
                     "description": "Name of the Student"
                 },
                 "studentId": {
                     "type": "string",
-                    "title": "studentId",
+                    "title": "student Id",
                     "description": "ID of the Student"
                 },
                 "branch":{
                     "type":"string",
-                    "title": "studentBranch",
+                    "title": "student Branch",
                     "description": "Branch of the Student"
                 }
             }

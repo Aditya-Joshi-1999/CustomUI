@@ -31,26 +31,29 @@ sap.ui.define(
 
           this.setTaskModels();
 
+          const approveOutcomeId = "approve";
+          const rejectOutcomeId = "reject";
+
           this.getInboxAPI().addAction(
             {
-              action: "APPROVE",
+              action: approveOutcomeId ,
               label: "Approve",
               type: "accept", // (Optional property) Define for positive appearance
             },
             function () {
-              this.completeTask(true);
+              this.completeTask(true, approveOutcomeId);
             },
             this
           );
 
           this.getInboxAPI().addAction(
             {
-              action: "REJECT",
+              action: rejectOutcomeId,
               label: "Reject",
               type: "reject", // (Optional property) Define for negative appearance
             },
             function () {
-              this.completeTask(false);
+              this.completeTask(false, rejectOutcomeId);
             },
             this
           );
@@ -93,16 +96,24 @@ sap.ui.define(
           return startupParameters.inboxAPI;
         },
 
-        completeTask: function (approvalStatus) {
+        completeTask: function (approvalStatus, outcomeId) {
+
           this.getModel("context").setProperty("/approved", approvalStatus);
-          this._patchTaskInstance();
+
+          this.getModel("context").setProperty("/studentName", studentName );
+          this.getModel("context").setProperty("/studentID", studentID );
+          this.getModel("context").setProperty("/branch", branch );
+          this.getModel("context").setProperty("/decision", outcomeId );
+
+          this._patchTaskInstance(outcomeId);
           this._refreshTaskList();
         },
 
-        _patchTaskInstance: function () {
+        _patchTaskInstance: function (outcomeId) {
           var data = {
             status: "COMPLETED",
             context: this.getModel("context").getData(),
+            decision: outcomeId
           };
 
           jQuery.ajax({

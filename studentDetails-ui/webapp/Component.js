@@ -98,11 +98,12 @@ sap.ui.define(
 
         completeTask: function (approvalStatus, outcomeId) {
 
+          const oContext = this.getModel("context").getData();
           this.getModel("context").setProperty("/approved", approvalStatus);
 
-          this.getModel("context").setProperty("/studentName", studentName );
-          this.getModel("context").setProperty("/studentID", studentID );
-          this.getModel("context").setProperty("/branch", branch );
+          this.getModel("context").setProperty("/studentName", oContext.studentName );
+          this.getModel("context").setProperty("/studentID", oContext.studentID );
+          this.getModel("context").setProperty("/branch", oContext.branch );
           this.getModel("context").setProperty("/decision", outcomeId );
 
           this._patchTaskInstance(outcomeId);

@@ -101,10 +101,10 @@ sap.ui.define(
           const oContext = this.getModel("context").getData();
           this.getModel("context").setProperty("/approved", approvalStatus);
 
-          this.getModel("context").setProperty("/studentName", oContext.studentName );
-          this.getModel("context").setProperty("/studentID", oContext.studentID );
-          this.getModel("context").setProperty("/branch", oContext.branch );
-          this.getModel("context").setProperty("/decision", outcomeId );
+          //this.getModel("context").setProperty("/studentName", oContext.studentName );
+          //this.getModel("context").setProperty("/studentId", oContext.studentId );
+          //this.getModel("context").setProperty("/branch", oContext.branch );
+          //this.getModel("context").setProperty("/decision", outcomeId );
 
           this._patchTaskInstance(outcomeId);
           this._refreshTaskList();
